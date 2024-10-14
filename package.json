@@ -1,0 +1,41 @@
+{
+    "name": "marked_reader",
+    "author": "Yu Hongbo, CNOCTAVE",
+    "version": "1.0.0",
+    "description": "marked_reader is an open source Markdown reader packed by Electron",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-packager . --all",
+        "build": "electron-builder",
+        "dist": "electron-builder --publish always"
+    },
+    "build": {
+        "appId": "cn.cnoctave.marked_reader",
+        "productName": "marked_reader",
+        "buildNumber": "1.0.0",
+        "icon": "logo.png",
+        "directories": {
+            "output": "dist"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "NSIS",
+                    "arch": [
+                        "ia32",
+                        "x64"
+                    ]
+                }
+            ]
+        }
+    },
+    "devDependencies": {
+        "electron": "^32.2.0",
+        "marked": "^14.1.2",
+        "electron-builder": "^25.1.8"
+    },
+    "dependencies": {
+        "marked": "^14.1.2"
+    }
+}

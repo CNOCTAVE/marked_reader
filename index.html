@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<!-- marked_reader is an open source markdown reader packed by electron
+Copyright (C) 2024  Yu Hongbo, CNOCTAVE
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
+
+<html>
+
+<head>
+    <title>Markdown Viewer</title>
+    <link href="github-markdown.css" rel="stylesheet" type="text/css">
+    <link href="MaterialIcons.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome/fontawesome5.css" rel="stylesheet" type="text/css">
+    <link href="fontawesome/fontawesome6.css" rel="stylesheet" type="text/css">
+    <link href="animate.css" rel="stylesheet" type="text/css">
+    <link href="quasar.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="q-app">
+        <q-layout view="hHh LpR fFf">
+            <q-header elevated class="bg-primary text-white">
+                <q-toolbar class="bg-primary text-white q-ny-md shadow-2">
+                    <q-btn stretch flat icon="folder" label="打开Markdown文档" id="openFile" @click="openFile"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat icon="refresh" label="刷新" id="refresh" @click="refresh"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <p style="display: none;" id="currentMarkdownFile"></p>
+                    <q-space></q-space>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat icon="minimize" label="最小化" id="minimize" @click="minimize"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat icon="fa-regular fa-window-maximize" label="最大化/还原" id="maximize" @click="maximize"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat icon="close" label="关闭" id="close" @click="close"></q-btn>
+                </q-toolbar>
+            </q-header>
+            <q-page-container>
+                <div id="markdownContent"></div>
+            </q-page-container>
+        </q-layout>
+    </div>
+    <script src="renderer.js"></script>
+    <script src="vue.js"></script>
+    <script src="quasar.js"></script>
+    <script>
+        // import { ipcRenderer } from 'electron';
+        const App = {
+            data() {
+                return {
+                    isMaximized: false,
+                    maximizeText: "最大化",
+                    openFile() {
+                        if (window.require && window.require('electron').ipcRenderer) {
+                            window.require('electron').ipcRenderer.send('open-markdown-dialog');
+                        } else {
+                            console.log('Electron not ready');
+                        }
+                    },
+                    refresh() {
+                        // console.log("refresh")
+                        // if (window.require && window.require('electron').ipcRenderer && document.getElementById('currentMarkdownFile').innerHTML != "") {
+                        //     location.reload(true);
+                        //     window.require('electron').ipcRenderer.send('refresh-markdown', document.getElementById('currentMarkdownFile').innerHTML);
+                        // } else {
+                        //     console.log('Electron not ready');
+                        // }
+                    },
+                    minimize() {
+                        this.sendActionToMain('minimize');
+                    },
+                    maximize() {
+                        if (this.isMaximized) {
+                            this.maximizeText = "还原";
+                        }
+                        else {
+                            this.maximizeText = "最大化";
+                        }
+                        this.isMaximized = !this.isMaximized;
+                        this.sendActionToMain('maximize');
+                    },
+                    close() {
+                        this.sendActionToMain('close');
+                    },
+                    sendActionToMain(action) {
+                        if (window.require && window.require('electron').ipcRenderer) {
+                            const id = Date.now()
+                            window.require('electron').ipcRenderer.send('message-from-renderer');
+                            window.require('electron').ipcRenderer.on('message-from-main', (event, arg) => {
+                                console.log(arg)
+                                event.sender.removeListener('message-from-main', arguments[1])
+                            })
+                        } else {
+                            console.log('Electron not ready');
+                        }
+                    }
+                };
+            },
+        };
+        const app = Vue.createApp(App);
+
+        app.use(Quasar)
+        app.mount('#q-app')
+    </script>
+</body>
+
+</html>
