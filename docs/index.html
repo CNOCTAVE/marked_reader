@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Copyright 2024 Yu Hongbo <yuhongbo@member.fsf.org>, 
+  CNOCTAVE <cnoctave@qq.com>
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.  This file is offered as-is,
+without any warranty.
+-->
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <meta name="theme-color" content="#00B4FF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-TileImage" content="favicon.ico">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-title" content="marked_reader文档">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.17.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <link href="assets/main.css" rel="stylesheet" type="text/css">
+    <title>marked_reader文档</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="title" content="marked_reader文档" data-qmeta="title">
+    <meta property="og:title" content="marked_reader文档" data-qmeta="ogTitle">
+    <meta name="twitter:title" content="marked_reader文档" data-qmeta="twitterTitle">
+    <meta name="description" content="Octave中文网是一个面向中文Octave开发者的交流平台，拥有中文Octave文档、中文Octave论坛和中文Octave新闻等特色。"
+        data-qmeta="description">
+    <meta property="og:description" content="Octave中文网是一个面向中文Octave开发者的交流平台，拥有中文Octave文档、中文Octave论坛和中文Octave新闻等特色。"
+        data-qmeta="ogDesc">
+    <meta name="twitter:description" content="Octave中文网是一个面向中文Octave开发者的交流平台，拥有中文Octave文档、中文Octave论坛和中文Octave新闻等特色。"
+        data-qmeta="twitterDesc">
+</head>
+
+<body>
+    <div id="q-app">
+        <q-layout view="hHh LpR fFf">
+            <q-header elevated class="bg-primary text-white">
+                <q-toolbar class="bg-primary text-white q-ny-md shadow-2">
+                    <q-btn stretch flat label="Octave中文网" @click="goTo('https://cnoctave.cn')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="marked_reader文档" @click="scrollToTop()"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-space></q-space>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn-dropdown stretch flat icon="translate" label="切换文档语言">
+                      <q-list>
+                        <q-item clickable v-close-popup @click="goTo('index.html')">
+                          <q-item-section>
+                            <q-item-label>zh-CN 简体中文</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-btn-dropdown>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="中文版Octave文档" @click="goTo('https://docs.cnoctave.cn')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="学术交流论坛" @click="goTo('https://forum.cnoctave.cn')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="新闻" @click="goTo('https://octave.org/news.html')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="使用方法" @click="goTo('https://wiki.octave.org/Using_Octave')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="免费下载" @click="goTo('https://octave.org/download')"></q-btn>
+                </q-toolbar>
+            </q-header>
+            <q-drawer class="bg-primary" show-if-above v-model="leftDrawerOpen" side="left" bordered elevated>
+                <q-list class="title1 text-white bg-primary">
+                    <q-item clickable v-ripple @click="goToID('#how_to_use')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            如何使用
+                        </q-item-section>
+                    </q-item>
+                    <q-item clickable v-ripple @click="goToID('#development_environment')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            开发环境
+                        </q-item-section>
+                    </q-item>
+                    <q-item clickable v-ripple @click="goToID('#dependencies')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            依赖库
+                        </q-item-section>
+                    </q-item>
+                    <q-item clickable v-ripple @click="goToID('#references')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            引用marked_reader
+                        </q-item-section>
+                    </q-item>
+                </q-list>
+            </q-drawer>
+
+            <q-page-container>
+                <div style="position: relative;">
+                    <q-img src="pic/banner0.png" spinner-color="white" style="width: 100%; height: 300px;"></q-img>
+                    <div class="q-mx-md rainbow-text"
+                        style="line-height: 300px; font-size: 100px; position: absolute; left: 0%; top: 0%;">marked_reader文档
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="main">
+                        <div class="text-h5 q-ma-md text-red-10">欢迎广大开发者将此文档翻译为其他语言。</div>
+                        <q-btn id="homepage" class="title1 text-white bg-primary" stretch flat
+                            label="项目首页：https://github.com/CNOCTAVE/marked_reader" @click="goTo('https://github.com/CNOCTAVE/marked_reader')"></q-btn>
+                        <q-separator></q-separator>
+                        <div id="how_to_use" class="title1 q-ma-md text-primary">如何使用</div>
+                        <div class="text-h5 q-ma-md text-red-10">点击左上角的按钮即可打开Markdown文档，如图所示：</div>
+                        <q-img src="pic/open_markdown.png" spinner-color="white" style="width: 100%; height: auto;"></q-img>
+                        <div class="text-h5 q-ma-md text-red-10">点击刷新按钮即可刷新当前打开的Markdown文档，如图所示：</div>
+                        <q-img src="pic/refresh.png" spinner-color="white" style="width: 100%; height: auto;"></q-img>
+                        <div class="text-h5 q-ma-md text-red-10">点击最小化按钮即可最小化窗口，如图所示：</div>
+                        <q-img src="pic/minimize.png" spinner-color="white" style="width: 100%; height: auto;"></q-img>
+                        <div class="text-h5 q-ma-md text-red-10">点击最大化/还原按钮即可最大化/还原窗口，如图所示：</div>
+                        <q-img src="pic/maximize.png" spinner-color="white" style="width: 100%; height: auto;"></q-img>
+                        <div class="text-h5 q-ma-md text-red-10">点击关闭按钮即可退出程序，如图所示：</div>
+                        <q-img src="pic/close.png" spinner-color="white" style="width: 100%; height: auto;"></q-img>
+                        <q-separator></q-separator>
+                        <div id="development_environment" class="title1 q-ma-md text-primary">开发环境</div>
+                        <div class="text-h5 q-ma-md text-red-10">此软件要求Node版本大于等于20。</div>
+                        <div class="text-h5 q-ma-md text-red-10">准备开发环境，代码如下：</div>
+                        <p class="q-ma-md">$ npm i</p>
+                        <p class="q-ma-md">$ npm start</p>
+                        <q-separator></q-separator>
+                        <div id="dependencies" class="title1 q-ma-md text-primary">依赖库</div>
+                        <p class="q-ma-md">electron</p>
+                        <p class="q-ma-md">electron-builder</p>
+                        <p class="q-ma-md">marked</p>
+                        <p class="q-ma-md">winston</p>
+                        <q-separator></q-separator>
+                        <div id="references" class="title1 q-ma-md text-primary">引用marked_reader</div>
+                        <div class="text-h5 q-ma-md text-red-10">如果你在学术研究中涉及marked_reader，那么可以按需引用以下内容。</div>
+                        <div class="text-h5 q-ma-md text-red-10">marked_reader源码(BibTeX)</div>
+                        <p class="q-ma-md">@misc{CNOCTAVE2024,
+                            author = {Yu Hongbo, },
+                            title = {marked_reader},
+                            year = {2024},
+                            howpublished = {\url{https://github.com/CNOCTAVE/marked_reader}},
+                          }</p>
+                        <div class="text-h5 q-ma-md text-red-10">marked_reader文档(BibTeX)</div>
+                        <p class="q-ma-md">@techreport{CNOCTAVE2024,
+                            author = {Yu Hongbo, },
+                            title = {marked_reader Document},
+                            institution = {BA DU XIN SHANG},
+                            year = {2024},
+                            number = {1},
+                            month = {10},
+                            url = {https://cnoctave.github.io/marked_reader/index.html},
+                            urldate = {2024-10-07},
+                          }</p>
+                        <div class="text-h5 q-ma-md text-red-10">marked_reader: Efficient File and String Decompression Utilizing the ZSTD Algorithm(BibTeX)</div>
+                        <p class="q-ma-md" style="white-space: normal;">@article{https://doi.org/10.6084/m9.figshare.27186048.v1,
+                            doi = {10.6084/M9.FIGSHARE.27186048.V1},
+                            url = {https://figshare.com/articles/preprint/marked_reader_Efficient_File_and_String_Decompression_Utilizing_the_ZSTD_Algorithm/27186048/1},
+                            author = {Yu Hongbo, },
+                            keywords = {Software architecture},
+                            title = {marked_reader: Efficient File and String Decompression Utilizing the ZSTD Algorithm},
+                            publisher = {figshare},
+                            year = {2024},
+                            copyright = {Creative Commons Attribution 4.0 International}
+                          }</p>
+                    </div>
+                </div>
+                <q-toolbar class="bg-grey-8 text-white q-my-md shadow-2">
+                    <q-btn-dropdown stretch flat label="版权所有 ©">
+                      <q-list>
+                        <q-item clickable v-close-popup @click="goTo('http://cnoctave.cn')">
+                          <q-item-section>
+                            <q-item-label>© 2024 CNOCTAVE</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                        <q-item clickable v-close-popup @click="goTo('https://orcid.org/0009-0007-9436-4161')">
+                          <q-item-section>
+                            <q-item-label>© 2024 Yu Hongbo</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-btn-dropdown>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="此文档受Creative Commons Attribution-NoDerivatives 4.0 International License协议保护。" 
+                    @click="goTo('https://creativecommons.org/licenses/by-nd/4.0/')"></q-btn>
+                    <q-separator dark vertical></q-separator>
+                    <q-btn stretch flat label="下载此文档的源码" 
+                    @click="goTo('https://github.com/CNOCTAVE/marked_reader')"></q-btn>
+                </q-toolbar>
+            </q-page-container>
+
+        </q-layout>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.17.0/dist/quasar.umd.prod.js"></script>
+    <script>
+
+        const App = {
+            data() {
+                return {
+                    scrollToTop() {
+                        window.scrollTo(0, 0);
+                    },
+                    goTo(target) {
+                        window.open(target, '_blank');
+                    },
+                    goToID(target) {
+                        window.open(target, '_self');
+                    },
+                    leftDrawerOpen: true,
+                };
+            },
+        };
+        const app = Vue.createApp(App);
+
+        app.use(Quasar)
+        app.mount('#q-app')
+    </script>
+</body>
+
+</html>

@@ -21,14 +21,9 @@ function sendActionToMain(action) {
     ipcRenderer.send('message-from-renderer', { action, id })
 
     ipcRenderer.on('message-from-main', (event, arg) => {
-        console.log(arg)
         event.sender.removeListener('message-from-main', arguments[1])
     })
 }
-
-document.getElementById('openFile').addEventListener('click', () => {
-    ipcRenderer.send('open-markdown-dialog');
-});
 
 ipcRenderer.on('selected-markdown-file', (event, filePath) => {
     if (filePath) {
@@ -42,22 +37,4 @@ ipcRenderer.on('selected-markdown-file', (event, filePath) => {
 ipcRenderer.on('markdown-rendered', (event, htmlContent) => {
     // 显示渲染后的 Markdown 内容
     document.getElementById('markdownContent').innerHTML = htmlContent;
-});
-
-ipcRenderer.on('refresh-markdown', (event, filePath) => {
-    // 请求主进程渲染 Markdown 文件
-    ipcRenderer.send('render-markdown', filePath);
-});
-
-document.getElementById('minimize').addEventListener('click', () => {
-    sendActionToMain('minimize');
-});
-
-document.getElementById('maximize').addEventListener('click', () => {
-    sendActionToMain('maximize');
-});
-
-document.getElementById('close').addEventListener('click', () => {
-    console.log('close');
-    sendActionToMain('close');
 });

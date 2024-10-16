@@ -42,7 +42,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
                     <q-separator dark vertical></q-separator>
                     <q-btn stretch flat icon="minimize" label="最小化" id="minimize" @click="minimize"></q-btn>
                     <q-separator dark vertical></q-separator>
-                    <q-btn stretch flat icon="fa-regular fa-window-maximize" label="最大化/还原" id="maximize" @click="maximize"></q-btn>
+                    <q-btn stretch flat icon="fa-regular fa-window-maximize" label="最大化/还原" id="maximize"
+                        @click="maximize"></q-btn>
                     <q-separator dark vertical></q-separator>
                     <q-btn stretch flat icon="close" label="关闭" id="close" @click="close"></q-btn>
                 </q-toolbar>
@@ -70,13 +71,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
                         }
                     },
                     refresh() {
-                        // console.log("refresh")
-                        // if (window.require && window.require('electron').ipcRenderer && document.getElementById('currentMarkdownFile').innerHTML != "") {
-                        //     location.reload(true);
-                        //     window.require('electron').ipcRenderer.send('refresh-markdown', document.getElementById('currentMarkdownFile').innerHTML);
-                        // } else {
-                        //     console.log('Electron not ready');
-                        // }
+                        if (window.require && window.require('electron').ipcRenderer && document.getElementById('currentMarkdownFile').innerHTML != "") {
+                            document.getElementById('markdownContent').innerHTML = "";
+                            var markdownFilePath = document.getElementById('currentMarkdownFile').innerHTML;
+                            window.require('electron').ipcRenderer.send('refresh-markdown', markdownFilePath);
+                        } else {
+                            console.log('Electron not ready');
+                        }
                     },
                     minimize() {
                         this.sendActionToMain('minimize');
@@ -99,7 +100,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
                             const id = Date.now()
                             window.require('electron').ipcRenderer.send('message-from-renderer');
                             window.require('electron').ipcRenderer.on('message-from-main', (event, arg) => {
-                                console.log(arg)
                                 event.sender.removeListener('message-from-main', arguments[1])
                             })
                         } else {

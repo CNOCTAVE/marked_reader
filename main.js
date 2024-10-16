@@ -17,7 +17,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 const { app, BrowserWindow, ipcMain, dialog, screen, nativeTheme } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { marked } = require('marked');
+const { Marked } = require('marked');
+const winston = require('winston');
+
+const log = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.Console(),
+        new winston.transports.File({
+            filename: 'log.txt',
+            level: 'info',
+            format: winston.format.simple(),
+        }),
+    ],
+});
 
 let mainWindow;
 
@@ -49,7 +63,6 @@ function createWindow() {
     win.loadFile('index.html')
 
     const handle = ipcMain.on('message-from-renderer', (event, arg) => {
-        console.log(arg)
         if (arg.action === 'minimize') {
             win.minimize()
         } else if (arg.action === 'maximize') {
@@ -86,7 +99,17 @@ ipcMain.on('open-markdown-dialog', (event) => {
     }
 });
 
+ipcMain.on('refresh-markdown', (event, filePath) => {
+    // 请求主进程渲染 Markdown 文件
+
+    if (filePath && filePath.length > 0) {
+        event.reply('selected-markdown-file', filePath);
+    }
+});
+
 ipcMain.on('render-markdown', (event, filePath) => {
+    log.info('filePath');
+    log.info(filePath);
     // 读取并渲染 Markdown 文件
     const markdownContent = fs.readFileSync(filePath, 'utf8');
     let markdownDir = path.dirname(filePath).replace(/\\/g, '/').replace(/%5C/g, '/'); // 获取 Markdown 文件的目录路径
@@ -95,7 +118,8 @@ ipcMain.on('render-markdown', (event, filePath) => {
             token.href = markdownDir + ("/" + token.href).replace("//", "/").replace("\\", "/").replace("%5C", "/").replace("./", "/"); // 修正相对路径
         }
     }
+    const marked = new Marked();
     marked.use({ walkTokens });
-    const htmlContent = marked(markdownContent);
+    const htmlContent = marked.parse(markdownContent);
     event.reply('markdown-rendered', htmlContent);
 });
