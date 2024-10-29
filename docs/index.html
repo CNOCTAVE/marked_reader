@@ -45,7 +45,7 @@ without any warranty.
         <q-layout view="hHh LpR fFf">
             <q-header elevated class="bg-primary text-white">
                 <q-toolbar class="bg-primary text-white q-ny-md shadow-2">
-                    <q-btn stretch flat label="Octave中文网" @click="goTo('https://cnoctave.cn')"></q-btn>
+                    <q-btn stretch flat label="Octave中文网" @click="goTo('http://cnoctave.cn')"></q-btn>
                     <q-separator dark vertical></q-separator>
                     <q-btn stretch flat label="marked_reader文档" @click="scrollToTop()"></q-btn>
                     <q-separator dark vertical></q-separator>
@@ -61,9 +61,9 @@ without any warranty.
                       </q-list>
                     </q-btn-dropdown>
                     <q-separator dark vertical></q-separator>
-                    <q-btn stretch flat label="中文版Octave文档" @click="goTo('https://docs.cnoctave.cn')"></q-btn>
+                    <q-btn stretch flat label="中文版Octave文档" @click="goTo('http://docs.cnoctave.cn')"></q-btn>
                     <q-separator dark vertical></q-separator>
-                    <q-btn stretch flat label="学术交流论坛" @click="goTo('https://forum.cnoctave.cn')"></q-btn>
+                    <q-btn stretch flat label="学术交流论坛" @click="goTo('http://forum.cnoctave.cn')"></q-btn>
                     <q-separator dark vertical></q-separator>
                     <q-btn stretch flat label="新闻" @click="goTo('https://octave.org/news.html')"></q-btn>
                     <q-separator dark vertical></q-separator>
@@ -139,7 +139,11 @@ without any warranty.
                         <div class="text-h5 q-ma-md text-red-10">此软件要求Node版本大于等于20。</div>
                         <div class="text-h5 q-ma-md text-red-10">准备开发环境，代码如下：</div>
                         <p class="q-ma-md">$ npm i</p>
+                        <div class="text-h5 q-ma-md text-red-10">调试代码如下：</div>
                         <p class="q-ma-md">$ npm start</p>
+                        <div class="text-h5 q-ma-md text-red-10">打包代码如下：</div>
+                        <p class="q-ma-md">$ npm run build</p>
+                        <div class="text-h5 q-ma-md text-red-10">打包前要关闭占用8080端口的所有程序，否则将打包失败。</div>
                         <q-separator></q-separator>
                         <div id="dependencies" class="title1 q-ma-md text-primary">依赖库</div>
                         <p class="q-ma-md">electron</p>
@@ -167,14 +171,14 @@ without any warranty.
                             url = {https://cnoctave.github.io/marked_reader/index.html},
                             urldate = {2024-10-07},
                           }</p>
-                        <div class="text-h5 q-ma-md text-red-10">marked_reader: Efficient File and String Decompression Utilizing the ZSTD Algorithm(BibTeX)</div>
-                        <p class="q-ma-md" style="white-space: normal;">@article{https://doi.org/10.6084/m9.figshare.27186048.v1,
-                            doi = {10.6084/M9.FIGSHARE.27186048.V1},
-                            url = {https://figshare.com/articles/preprint/marked_reader_Efficient_File_and_String_Decompression_Utilizing_the_ZSTD_Algorithm/27186048/1},
+                        <div class="text-h5 q-ma-md text-red-10">Unlocking the Power of Open-Source Software: A Comprehensive Analysis of marked_reader(BibTeX)</div>
+                        <p class="q-ma-md" style="white-space: normal;">@article{https://doi.org/10.31224/4021,
+                            doi = {10.31224/4021},
+                            url = {https://engrxiv.org/preprint/view/4021/version/5520},
                             author = {Yu Hongbo, },
-                            keywords = {Software architecture},
-                            title = {marked_reader: Efficient File and String Decompression Utilizing the ZSTD Algorithm},
-                            publisher = {figshare},
+                            keywords = {CNOCTAVE, open-source, marked_reader, Markdown},
+                            title = {Unlocking the Power of Open-Source Software: A Comprehensive Analysis of marked_reader},
+                            publisher = {engrxiv},
                             year = {2024},
                             copyright = {Creative Commons Attribution 4.0 International}
                           }</p>
