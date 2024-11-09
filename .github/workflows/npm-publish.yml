@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - uses: samuelmeuli/action-snapcraft@v2
         with:
           node-version: 20
       - run: sudo snap install snapcraft --classic
@@ -30,6 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - uses: samuelmeuli/action-snapcraft@v2
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
