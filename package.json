@@ -18,6 +18,14 @@
         "directories": {
             "output": "dist"
         },
+        "publish": [
+          {
+            "provider": "github",
+            "owner": "CNOCTAVE",
+            "repo": "marked_reader",
+            "releaseType": "release"
+          }
+        ],
         "win": {
             "target": [
                 {
