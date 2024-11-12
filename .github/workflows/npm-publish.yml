@@ -20,7 +20,7 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
-      - run: sudo apt-get install lzip flatpak flatpak-builder -y
+      - run: sudo apt-get install lzip flatpak flatpak-builder elfutils -y
       - run: npm ci
       - run: npm run build
 
