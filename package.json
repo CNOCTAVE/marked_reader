@@ -71,16 +71,6 @@
                     ]
                 },
                 {
-                    "target": "msi-wrapped",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "armv7l",
-                        "arm64",
-                        "universal"
-                    ]
-                },
-                {
                     "target": "7z",
                     "arch": [
                         "x64",
