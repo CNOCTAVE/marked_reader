@@ -11,6 +11,8 @@
         "build-linux": "electron-builder --linux",
         "build-win": "electron-builder --win",
         "build-macos": "electron-builder --mac",
+        "build-solaris": "electron-builder --solaris",
+        "build-flatpak": "electron-builder --flatpak",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -135,14 +137,6 @@
                 },
                 {
                     "target": "pkg",
-                    "arch": [
-                        "x64",
-                        "arm64",
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "7z",
                     "arch": [
                         "x64",
                         "arm64",
@@ -296,6 +290,33 @@
                         "x64",
                         "armv7l",
                         "arm64"
+                    ]
+                }
+            ]
+        },
+        "solaris": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "p5p",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ]
+        },
+        "flatpak": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "flatpak",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
                     ]
                 }
             ]
