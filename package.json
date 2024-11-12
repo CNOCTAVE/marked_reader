@@ -32,7 +32,6 @@
                     "target": "nsis",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -42,7 +41,6 @@
                     "target": "nsis-web",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -52,7 +50,6 @@
                     "target": "portable",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -62,7 +59,6 @@
                     "target": "msi",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -72,7 +68,6 @@
                     "target": "msi-wrapped",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -82,7 +77,6 @@
                     "target": "7z",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -92,7 +86,6 @@
                     "target": "zip",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -102,7 +95,6 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -112,7 +104,6 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -122,7 +113,6 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -132,7 +122,6 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -146,7 +135,6 @@
                     "target": "default",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -156,7 +144,6 @@
                     "target": "dmg",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -166,7 +153,6 @@
                     "target": "mas",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -176,7 +162,6 @@
                     "target": "mas-dev",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -186,7 +171,6 @@
                     "target": "pkg",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -196,7 +180,6 @@
                     "target": "7z",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -206,7 +189,6 @@
                     "target": "zip",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -216,7 +198,6 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -226,7 +207,6 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -236,7 +216,6 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -246,7 +225,6 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -260,7 +238,6 @@
                     "target": "AppImage",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -270,7 +247,6 @@
                     "target": "flatpak",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -280,7 +256,6 @@
                     "target": "snap",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -290,7 +265,6 @@
                     "target": "deb",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -300,7 +274,6 @@
                     "target": "rpm",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -310,7 +283,6 @@
                     "target": "freebsd",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -320,7 +292,6 @@
                     "target": "pacman",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -330,7 +301,6 @@
                     "target": "p5p",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -340,7 +310,6 @@
                     "target": "apk",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -350,7 +319,6 @@
                     "target": "7z",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -360,7 +328,6 @@
                     "target": "zip",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -370,7 +337,6 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -380,7 +346,6 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -390,7 +355,6 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
@@ -400,7 +364,6 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64",
                         "universal"
