@@ -8,51 +8,34 @@ on:
     types: [created]
 
 jobs:
-  # linux-build:
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
-  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 20
-  #         registry-url: https://registry.npmjs.org/
-  #     - uses: samuelmeuli/action-snapcraft@v2
-  #     - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
-  #     - run: npm ci
-  #     - run: npm run build-linux
+  linux-build:
+    runs-on: ubuntu-latest
+    env:
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - uses: samuelmeuli/action-snapcraft@v2
+      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
+      - run: npm ci
+      - run: npm run build-linux
 
-  # publish-npm:
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-  #     SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
-  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 20
-  #         registry-url: https://registry.npmjs.org/
-  #     - uses: samuelmeuli/action-snapcraft@v2
-  #     - run: sudo snap install snapcraft --classic
-  #     - run: npm ci
-  #     - run: npm publish
-
-  # windows-build:
-  #   runs-on: windows-latest
-  #   env:
-  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 20
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: npm ci
-  #     - run: npm run build-win
+  windows-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win
 
   macos-build:
     runs-on: macos-latest
@@ -64,14 +47,13 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: sudo softwareupdate -ia
-      - run: brew update && brew upgrade
       - run: npm ci
-      # - run: npm run build-macos
+      - run: npm run build-macos
 
-  solaris-build:
-    runs-on: solaris-latest
+  publish-npm:
+    runs-on: ubuntu-latest
     env:
+      NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -79,18 +61,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      - uses: samuelmeuli/action-snapcraft@v2
       - run: npm ci
-      - run: npm run build-solaris
-
-  flatpak-build:
-    runs-on: fedora-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build-flatpak
+      - run: npm publish

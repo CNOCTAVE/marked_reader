@@ -293,33 +293,6 @@
                     ]
                 }
             ]
-        },
-        "solaris": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "p5p",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ]
-        },
-        "flatpak": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "flatpak",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "armv7l",
-                        "arm64",
-                        "universal"
-                    ]
-                }
-            ]
         }
     },
     "devDependencies": {
