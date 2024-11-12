@@ -19,6 +19,8 @@
             "output": "dist"
         },
         "win": {
+            "publish": ["github"],
+            "releaseType": "release",
             "target": [
                 {
                     "target": "nsis",
@@ -133,6 +135,8 @@
             ]
         },
         "mac": {
+            "publish": ["github"],
+            "releaseType": "release",
             "target": [
                 {
                     "target": "default",
@@ -247,6 +251,8 @@
             ]
         },
         "linux": {
+            "publish": ["github"],
+            "releaseType": "release",
             "target": [
                 {
                     "target": "AppImage",
@@ -400,6 +406,7 @@
                 }
             ]
         },
+        "publish":
         "releaseType": "release"
     },
     "devDependencies": {
