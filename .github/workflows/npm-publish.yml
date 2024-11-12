@@ -22,7 +22,6 @@ jobs:
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo apt-get install lzip elfutils libarchive-tools -y
       - run: npm ci
-      - run: npm i dmg-license
       - run: npm run build
 
   publish-npm:
