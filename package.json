@@ -8,7 +8,7 @@
     "scripts": {
         "start": "electron .",
         "pack": "electron-packager . --all",
-        "build": "electron-builder",
+        "build": "electron-builder --win --mac",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -253,19 +253,6 @@
                         "armv7l",
                         "arm64",
                         "universal"
-                    ]
-                }
-            ]
-        },
-        "linux": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "apk",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
                     ]
                 }
             ]
