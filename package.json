@@ -8,7 +8,7 @@
         "start": "electron .",
         "pack": "electron-packager . --all",
         "build": "electron-builder",
-        "dist": "electron-builder --publish always"
+        "dist": "electron-builder --publish"
     },
     "build": {
         "appId": "cn.cnoctave.marked_reader",
@@ -19,8 +19,6 @@
             "output": "dist"
         },
         "win": {
-            "publish": ["github"],
-            "releaseType": "release",
             "target": [
                 {
                     "target": "nsis",
@@ -135,8 +133,6 @@
             ]
         },
         "mac": {
-            "publish": ["github"],
-            "releaseType": "release",
             "target": [
                 {
                     "target": "default",
@@ -251,8 +247,6 @@
             ]
         },
         "linux": {
-            "publish": ["github"],
-            "releaseType": "release",
             "target": [
                 {
                     "target": "AppImage",
