@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo snap install snapcraft --classic
       - run: npm ci
@@ -35,9 +36,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo snap install snapcraft --classic
       - run: npm ci
       - run: npm publish
-        with:
-          registry-url: https://registry.npmjs.org/
