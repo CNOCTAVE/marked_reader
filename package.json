@@ -260,23 +260,7 @@
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
-                    "target": "AppImage",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "flatpak",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "snap",
                     "arch": [
                         "x64",
                         "armv7l",
@@ -325,54 +309,6 @@
                 },
                 {
                     "target": "apk",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "7z",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "tar.xz",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "tar.lz",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "tar.gz",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "tar.bz2",
                     "arch": [
                         "x64",
                         "armv7l",
