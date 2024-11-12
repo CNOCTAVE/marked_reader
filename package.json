@@ -1,7 +1,7 @@
 {
-    "name": "marked_reader",
+    "name": "marked-reader",
     "author": "Yu Hongbo, CNOCTAVE",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "marked_reader is an open source Markdown reader packed by Electron",
     "main": "main.js",
     "scripts": {
