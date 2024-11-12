@@ -51,14 +51,6 @@
                     ]
                 },
                 {
-                    "target": "portable",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "msi",
                     "arch": [
                         "x64",
@@ -113,6 +105,14 @@
                         "ia32",
                         "arm64"
                     ]
+                },
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "arm64"
+                    ]
                 }
             ]
         },
@@ -121,22 +121,6 @@
             "target": [
                 {
                     "target": "default",
-                    "arch": [
-                        "x64",
-                        "arm64",
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "dmg",
-                    "arch": [
-                        "x64",
-                        "arm64",
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "pkg",
                     "arch": [
                         "x64",
                         "arm64",
@@ -177,6 +161,22 @@
                 },
                 {
                     "target": "tar.bz2",
+                    "arch": [
+                        "x64",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "pkg",
                     "arch": [
                         "x64",
                         "arm64",
@@ -237,14 +237,6 @@
                     ]
                 },
                 {
-                    "target": "apk",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "7z",
                     "arch": [
                         "x64",
@@ -286,6 +278,14 @@
                 },
                 {
                     "target": "tar.bz2",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "apk",
                     "arch": [
                         "x64",
                         "armv7l",
