@@ -27,7 +27,7 @@
           }
         ],
         "win": {
-            "artifactName": "${name}-${version}-win-${arch}.${ext}",
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
                     "target": "nsis",
@@ -142,7 +142,7 @@
             ]
         },
         "mac": {
-            "artifactName": "${name}-${version}-mac-${arch}.${ext}",
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
                     "target": "default",
@@ -257,7 +257,7 @@
             ]
         },
         "linux": {
-            "artifactName": "${name}-${version}-linux-${arch}.${ext}",
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
                     "target": "AppImage",
