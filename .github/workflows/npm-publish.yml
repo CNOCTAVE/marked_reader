@@ -21,6 +21,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
       - uses: louib/flatpak-action@1.0.3
+      - run: sudo apt-get install lzip -y
       - run: npm ci
       - run: npm run build
 
