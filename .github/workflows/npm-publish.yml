@@ -8,10 +8,25 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  # linux-build:
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #         registry-url: https://registry.npmjs.org/
+  #     - uses: samuelmeuli/action-snapcraft@v2
+  #     - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
+  #     - run: npm ci
+  #     - run: npm run build-linux
+
+  windows-build:
+    runs-on: windows-latest
     env:
-      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -19,13 +34,11 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - uses: samuelmeuli/action-snapcraft@v2
-      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
       - run: npm ci
-      - run: npm run build
+      - run: npm run build-win
 
   publish-npm:
-    needs: build
+    needs: windows-build
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{secrets.npm_token}}
