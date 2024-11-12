@@ -121,8 +121,6 @@
                     "target": "default",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -131,8 +129,6 @@
                     "target": "dmg",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -141,8 +137,6 @@
                     "target": "pkg",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -151,8 +145,6 @@
                     "target": "7z",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -161,8 +153,6 @@
                     "target": "zip",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -171,8 +161,6 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -181,8 +169,6 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -191,8 +177,6 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
@@ -201,8 +185,6 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "ia32",
-                        "armv7l",
                         "arm64",
                         "universal"
                     ]
