@@ -36,8 +36,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -45,8 +44,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -54,8 +52,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -63,8 +60,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -72,8 +68,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -81,8 +76,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -90,8 +84,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -99,8 +92,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -108,8 +100,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
@@ -117,8 +108,7 @@
                     "arch": [
                         "x64",
                         "ia32",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 }
             ]
