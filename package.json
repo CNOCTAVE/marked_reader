@@ -261,22 +261,6 @@
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
-                    "target": "pacman",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "p5p",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "apk",
                     "arch": [
                         "x64",
