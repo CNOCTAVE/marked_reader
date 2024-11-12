@@ -10,6 +10,7 @@
         "pack": "electron-packager . --all",
         "build-linux": "electron-builder --linux",
         "build-win": "electron-builder --win",
+        "build-macos": "electron-builder --mac",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -108,6 +109,230 @@
                     "arch": [
                         "x64",
                         "ia32",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "mac": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "default",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "mas",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "mas-dev",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "pkg",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "7z",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.xz",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.lz",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.gz",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.bz2",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "armv7l",
+                        "arm64",
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "linux": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "snap",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "rpm",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "freebsd",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "pacman",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "apk",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "7z",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "tar.xz",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "tar.lz",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "tar.gz",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "tar.bz2",
+                    "arch": [
+                        "x64",
+                        "armv7l",
                         "arm64"
                     ]
                 }

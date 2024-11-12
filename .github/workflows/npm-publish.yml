@@ -24,8 +24,21 @@ jobs:
   #     - run: npm ci
   #     - run: npm run build-linux
 
-  windows-build:
-    runs-on: windows-latest
+  # windows-build:
+  #   runs-on: windows-latest
+  #   env:
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - run: npm run build-win
+
+  macos-build:
+    runs-on: macos-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
@@ -35,10 +48,10 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm run build-win
+      - run: npm run build-macos
 
   publish-npm:
-    needs: windows-build
+    needs: macos-build
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{secrets.npm_token}}
