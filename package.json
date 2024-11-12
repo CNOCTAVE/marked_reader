@@ -405,9 +405,7 @@
                     ]
                 }
             ]
-        },
-        "publish":
-        "releaseType": "release"
+        }
     },
     "devDependencies": {
         "electron": "^32.2.0",
