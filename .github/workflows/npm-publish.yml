@@ -20,7 +20,7 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
-      - run: sudo apt-get install lzip elfutils libarchive-tools wine -y
+      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
       - run: npm ci
       - run: npm run build
 
