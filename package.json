@@ -280,8 +280,7 @@
                     "target": "apk",
                     "arch": [
                         "x64",
-                        "armv7l",
-                        "arm64"
+                        "armv7l"
                     ]
                 }
             ]
