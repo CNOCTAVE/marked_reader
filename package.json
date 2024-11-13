@@ -128,14 +128,6 @@
                     ]
                 },
                 {
-                    "target": "zip",
-                    "arch": [
-                        "x64",
-                        "arm64",
-                        "universal"
-                    ]
-                },
-                {
                     "target": "tar.xz",
                     "arch": [
                         "x64",
