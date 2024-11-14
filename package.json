@@ -11,8 +11,18 @@
         "build-linux": "electron-builder --linux",
         "build-win": "electron-builder --win",
         "build-macos": "electron-builder --mac",
-        "build-solaris": "electron-builder --solaris",
-        "build-flatpak": "electron-builder --flatpak",
+        "build-mac_universal": "electron-builder --mac_universal",
+        "build-mac_zip": "electron-builder --mac_zip",
+        "build-mac_zip_universal": "electron-builder --mac_zip_universal",
+        "build-win_universal": "electron-builder --win_universal",
+        "build-win_nsis": "electron-builder --win_nsis",
+        "build-win_nsis_universal": "electron-builder --win_nsis_universal",
+        "build-win_squirrel": "electron-builder --win_squirrel",
+        "build-win_squirrel_universal": "electron-builder --win_squirrel_universal",
+        "build-linux_apk": "electron-builder --linux_apk",
+        "build-linux_apk_universal": "electron-builder --linux_apk_universal",
+        "build-linux_flatpak": "electron-builder --linux_flatpak",
+        "build-linux_flatpak_universal": "electron-builder --linux_flatpak_universal",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -34,22 +44,6 @@
         "win": {
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "nsis-web",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
                 {
                     "target": "msi",
                     "arch": [
@@ -123,56 +117,49 @@
                     "target": "default",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "dmg",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 },
                 {
                     "target": "pkg",
                     "arch": [
                         "x64",
-                        "arm64",
-                        "universal"
+                        "arm64"
                     ]
                 }
             ]
@@ -275,12 +262,238 @@
                         "armv7l",
                         "arm64"
                     ]
+                }
+            ]
+        },
+        "mac_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "default",
+                    "arch": [
+                        "universal"
+                    ]
                 },
+                {
+                    "target": "tar.xz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.lz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.gz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.bz2",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "pkg",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "mac_zip": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "zip",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "mac_zip_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "zip",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "win_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "msi",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "7z",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "zip",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.xz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.lz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.gz",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "tar.bz2",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "portable",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "win_nsis": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "arm64"
+                    ]
+                },
+                {
+                    "target": "nsis-web",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "win_nsis_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "universal"
+                    ]
+                },
+                {
+                    "target": "nsis-web",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "win_squirrel": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "squirrel",
+                    "arch": [
+                        "x64",
+                        "ia32",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "win_squirrel_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "squirrel",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "linux_apk": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
                 {
                     "target": "apk",
                     "arch": [
                         "x64",
-                        "armv7l"
+                        "armv7l",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "linux_apk_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "apk",
+                    "arch": [
+                        "universal"
+                    ]
+                }
+            ]
+        },
+        "linux_flatpak": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "flatpak",
+                    "arch": [
+                        "x64",
+                        "armv7l",
+                        "arm64"
+                    ]
+                }
+            ]
+        },
+        "linux_flatpak_universal": {
+            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+            "target": [
+                {
+                    "target": "flatpak",
+                    "arch": [
+                        "universal"
                     ]
                 }
             ]

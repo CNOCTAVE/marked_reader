@@ -8,7 +8,168 @@ on:
     types: [created]
 
 jobs:
-  linux-build:
+  # linux-build:
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         registry-url: https://registry.npmjs.org/
+  #     - uses: samuelmeuli/action-snapcraft@v2
+  #     - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
+  #     - run: npm ci
+  #     - run: npm run build-linux
+
+  # windows-build:
+  #   runs-on: windows-latest
+  #   env:
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - run: npm run build-win
+
+  # macos-build:
+  #   runs-on: macos-latest
+  #   env:
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm ci
+  #     - run: npm run build-macos
+
+  # publish-npm:
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         registry-url: https://registry.npmjs.org/
+  #     - uses: samuelmeuli/action-snapcraft@v2
+  #     - run: npm ci
+  #     - run: npm publish
+
+  macos_universal-build:
+    runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-mac_universal
+
+  mac_zip-build:
+    runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-mac_zip
+
+  mac_zip_universal-build:
+    runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-mac_zip_universal
+
+  win_universal-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win_universal
+
+  win_nsis-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win_nsis
+
+  win_nsis_universal-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win_nsis_universal
+
+  win_squirrel-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win_squirrel
+
+  win_squirrel_universal-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build-win_squirrel_universal
+
+  linux_apk-build:
     runs-on: ubuntu-latest
     env:
       SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
@@ -22,38 +183,12 @@ jobs:
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
       - run: npm ci
-      - run: npm run build-linux
+      - run: npm run build-linux_apk
 
-  windows-build:
-    runs-on: windows-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build-win
-
-  macos-build:
-    runs-on: macos-latest
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build-macos
-
-  publish-npm:
+  linux_apk_universal-build:
     runs-on: ubuntu-latest
     env:
-      NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -62,5 +197,38 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org/
       - uses: samuelmeuli/action-snapcraft@v2
+      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
       - run: npm ci
-      - run: npm publish
+      - run: npm run build-linux_apk_universal
+
+  linux_flatpak-build:
+    runs-on: ubuntu-latest
+    env:
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - uses: samuelmeuli/action-snapcraft@v2
+      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install flatpak flatpak-builder lzip elfutils libarchive-tools wine wine32 -y
+      - run: npm ci
+      - run: npm run build-linux_flatpak
+
+  linux_flatpak_universal-build:
+    runs-on: ubuntu-latest
+    env:
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - uses: samuelmeuli/action-snapcraft@v2
+      - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install flatpak flatpak-builder lzip elfutils libarchive-tools wine wine32 -y
+      - run: npm ci
+      - run: npm run build-linux_flatpak_universal
