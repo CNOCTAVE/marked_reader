@@ -238,8 +238,10 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install flatpak flatpak-builder lzip elfutils libarchive-tools wine wine32 -y
-      - run: npm set ELECTRON_BUILDER_BINARIES_MIRROR https://mirrors.huaweicloud.com/electron-builder-binaries/
       - run: npm ci
       - run: npm run build-linux_flatpak_universal
