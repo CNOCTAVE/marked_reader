@@ -22,7 +22,7 @@
         "build-linux_apk": "electron-builder --linux_apk",
         "build-linux_apk_universal": "electron-builder --linux_apk_universal",
         "build-linux_flatpak": "electron-builder --linux_flatpak",
-        "build-linux_flatpak_universal": "electron-builder --linux_flatpak_universal",
+        "build-linux_flatpak_universal": "electron-builder --linux --config linux_flatpak_universal.json",
         "dist": "electron-builder --publish"
     },
     "build": {
