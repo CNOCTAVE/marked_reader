@@ -14,15 +14,10 @@
         "build-mac_universal": "electron-builder --mac_universal",
         "build-mac_zip": "electron-builder --mac_zip",
         "build-mac_zip_universal": "electron-builder --mac_zip_universal",
-        "build-win_universal": "electron-builder --win_universal",
         "build-win_nsis": "electron-builder --win_nsis",
-        "build-win_nsis_universal": "electron-builder --win_nsis_universal",
         "build-win_squirrel": "electron-builder --win_squirrel",
-        "build-win_squirrel_universal": "electron-builder --win_squirrel_universal",
         "build-linux_apk": "electron-builder --linux_apk",
-        "build-linux_apk_universal": "electron-builder --linux_apk_universal",
-        "build-linux_flatpak": "electron-builder --linux_flatpak",
-        "build-linux_flatpak_universal": "electron-builder --linux --config linux_flatpak_universal.json",
+        "build-linux_flatpak": "electron-builder --linux --config linux_flatpak.json",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -335,59 +330,6 @@
                 }
             ]
         },
-        "win_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "msi",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "7z",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "zip",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.xz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.lz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.gz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.bz2",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "portable",
-                    "arch": [
-                        "universal"
-                    ]
-                }
-            ]
-        },
         "win_nsis": {
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
@@ -409,23 +351,6 @@
                 }
             ]
         },
-        "win_nsis_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "nsis-web",
-                    "arch": [
-                        "universal"
-                    ]
-                }
-            ]
-        },
         "win_squirrel": {
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
@@ -435,17 +360,6 @@
                         "x64",
                         "ia32",
                         "arm64"
-                    ]
-                }
-            ]
-        },
-        "win_squirrel_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "squirrel",
-                    "arch": [
-                        "universal"
                     ]
                 }
             ]
@@ -463,17 +377,6 @@
                 }
             ]
         },
-        "linux_apk_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "apk",
-                    "arch": [
-                        "universal"
-                    ]
-                }
-            ]
-        },
         "linux_flatpak": {
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
@@ -483,17 +386,6 @@
                         "x64",
                         "armv7l",
                         "arm64"
-                    ]
-                }
-            ]
-        },
-        "linux_flatpak_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "flatpak",
-                    "arch": [
-                        "universal"
                     ]
                 }
             ]
