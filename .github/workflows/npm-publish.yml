@@ -243,5 +243,6 @@ jobs:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install flatpak flatpak-builder lzip elfutils libarchive-tools wine wine32 -y
+      - run: npm install --save electron-prebuilt-compile
       - run: npm ci
       - run: npm run build-linux_flatpak_universal
