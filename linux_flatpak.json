@@ -23,7 +23,23 @@
                     "x64",
                     "armv7l",
                     "arm64"
-                ]
+                ],
+                "options": {
+                  "bundle": "your-app-id",
+                  "runtime": "org.freedesktop.Platform/x86_64/20.08",
+                  "sdk": "org.freedesktop.Sdk/x86_64/20.08",
+                  "metadata": {
+                    "name": "marked_reader",
+                    "description": "marked_reader is an open source Markdown reader packed by Electron",
+                    "version": "1.2.0",
+                    "com.github.app.url": "http://cnoctave.cn",
+                    "com.github.app.license": "gpl-3.0+"
+                  },
+                  "finishArgs": [
+                    "--socket=x11",
+                    "--share=network"
+                  ]
+                }
             }
         ]
     }
