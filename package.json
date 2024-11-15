@@ -11,12 +11,12 @@
         "build-linux": "electron-builder --linux",
         "build-win": "electron-builder --win",
         "build-macos": "electron-builder --mac",
-        "build-mac_universal": "electron-builder --mac_universal",
-        "build-mac_zip": "electron-builder --mac_zip",
-        "build-mac_zip_universal": "electron-builder --mac_zip_universal",
-        "build-win_nsis": "electron-builder --win_nsis",
-        "build-win_squirrel": "electron-builder --win_squirrel",
-        "build-linux_apk": "electron-builder --linux_apk",
+        "build-mac_universal": "electron-builder --mac --config mac_universal.json",
+        "build-mac_zip": "electron-builder --mac --config mac_zip.json",
+        "build-mac_zip_universal": "electron-builder --mac --config mac_zip_universal.json",
+        "build-win_nsis": "electron-builder --win --config win_nsis.json",
+        "build-win_squirrel": "electron-builder --win --config win_squirrel.json",
+        "build-linux_apk": "electron-builder --linux --config linux_apk.json",
         "build-linux_flatpak": "electron-builder --linux --config linux_flatpak.json",
         "dist": "electron-builder --publish"
     },
@@ -252,136 +252,6 @@
                 },
                 {
                     "target": "tar.bz2",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                }
-            ]
-        },
-        "mac_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "default",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.xz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.lz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.gz",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "tar.bz2",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "dmg",
-                    "arch": [
-                        "universal"
-                    ]
-                },
-                {
-                    "target": "pkg",
-                    "arch": [
-                        "universal"
-                    ]
-                }
-            ]
-        },
-        "mac_zip": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "zip",
-                    "arch": [
-                        "x64",
-                        "arm64"
-                    ]
-                }
-            ]
-        },
-        "mac_zip_universal": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "zip",
-                    "arch": [
-                        "universal"
-                    ]
-                }
-            ]
-        },
-        "win_nsis": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "nsis-web",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                }
-            ]
-        },
-        "win_squirrel": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "squirrel",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                }
-            ]
-        },
-        "linux_apk": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "apk",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                }
-            ]
-        },
-        "linux_flatpak": {
-            "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
-            "target": [
-                {
-                    "target": "flatpak",
                     "arch": [
                         "x64",
                         "armv7l",

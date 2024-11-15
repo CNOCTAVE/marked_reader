@@ -1,0 +1,30 @@
+{
+    "appId": "cn.cnoctave.marked_reader",
+    "productName": "marked_reader",
+    "buildNumber": "1.2.0",
+    "icon": "logo.png",
+    "directories": {
+        "output": "dist"
+    },
+    "publish": [
+        {
+        "provider": "github",
+        "owner": "CNOCTAVE",
+        "repo": "marked_reader",
+        "releaseType": "release"
+        }
+    ],
+    "win": {
+        "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+        "target": [
+            {
+                "target": "squirrel",
+                "arch": [
+                    "x64",
+                    "ia32",
+                    "arm64"
+                ]
+            }
+        ]
+    }
+}
