@@ -18,25 +18,7 @@
         "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "target": [
             {
-                "target": "tar.xz",
-                "arch": [
-                    "universal"
-                ]
-            },
-            {
-                "target": "tar.lz",
-                "arch": [
-                    "universal"
-                ]
-            },
-            {
-                "target": "tar.gz",
-                "arch": [
-                    "universal"
-                ]
-            },
-            {
-                "target": "tar.bz2",
+                "target": "dmg",
                 "arch": [
                     "universal"
                 ]

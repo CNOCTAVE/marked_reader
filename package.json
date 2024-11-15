@@ -24,6 +24,10 @@
         "build-mac_zip_universal": "electron-builder --mac --config mac_zip_universal.json",
         "build-mac_7z": "electron-builder --mac --config mac_7z.json",
         "build-mac_7z_universal": "electron-builder --mac --config mac_7z_universal.json",
+        "build-mac_default": "electron-builder --mac --config mac_default.json",
+        "build-mac_default_universal": "electron-builder --mac --config mac_default_universal.json",
+        "build-mac_dmg": "electron-builder --mac --config mac_dmg.json",
+        "build-mac_dmg_universal": "electron-builder --mac --config mac_dmg_universal.json",
         "build-mac_pkg_arm64": "electron-builder --mac --config mac_pkg_arm64.json",
         "build-mac_pkg_x64": "electron-builder --mac --config mac_pkg_x64.json",
         "build-mac_pkg_universal": "electron-builder --mac --config mac_pkg_universal.json",
@@ -130,13 +134,6 @@
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
-                    "target": "default",
-                    "arch": [
-                        "x64",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "tar.xz",
                     "arch": [
                         "x64",
@@ -159,13 +156,6 @@
                 },
                 {
                     "target": "tar.bz2",
-                    "arch": [
-                        "x64",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "dmg",
                     "arch": [
                         "x64",
                         "arm64"
