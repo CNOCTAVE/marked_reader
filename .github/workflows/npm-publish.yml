@@ -157,7 +157,7 @@ jobs:
       - run: npm ci
       - run: npm run build-mac_7z_universal
 
-  mac_pkg-build:
+  mac_pkg_arm64-build:
     runs-on: macos-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -171,7 +171,23 @@ jobs:
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
-      - run: npm run build-mac_pkg
+      - run: npm run build-mac_pkg_arm64
+
+  mac_pkg_x64-build:
+    runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-mac_pkg_x64
 
   mac_pkg_universal-build:
     runs-on: macos-latest
@@ -202,6 +218,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_appx_arm64
 
@@ -218,6 +237,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_appx_ia32
 
@@ -234,6 +256,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_appx_x64
 
@@ -298,6 +323,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_lz_arm64
 
@@ -314,6 +342,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_lz_ia32
 
@@ -330,6 +361,9 @@ jobs:
       - uses: bduff9/use-npmrc@v2.0.0
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - uses: lyricwulf/abc@v1
+        with: 
+          windows: lzip
       - run: npm ci
       - run: npm run build-win_lz_x64
 
