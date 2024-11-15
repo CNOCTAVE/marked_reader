@@ -22,8 +22,11 @@
         "build-mac_universal": "electron-builder --mac --config mac_universal.json",
         "build-mac_zip": "electron-builder --mac --config mac_zip.json",
         "build-mac_zip_universal": "electron-builder --mac --config mac_zip_universal.json",
+        "build-mac_7z": "electron-builder --mac --config mac_7z.json",
+        "build-mac_7z_universal": "electron-builder --mac --config mac_7z_universal.json",
         "build-win_nsis": "electron-builder --win --config win_nsis.json",
         "build-win_squirrel": "electron-builder --win --config win_squirrel.json",
+        "build-win_lz": "electron-builder --win --config win_lz.json",
         "build-linux_apk": "electron-builder --linux --config linux_apk.json",
         "build-linux_flatpak": "electron-builder --linux --config linux_flatpak.json",
         "dist": "electron-builder --publish"
@@ -73,14 +76,6 @@
                 },
                 {
                     "target": "tar.xz",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "tar.lz",
                     "arch": [
                         "x64",
                         "ia32",
@@ -174,7 +169,6 @@
                     "target": "AppImage",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -183,7 +177,6 @@
                     "target": "snap",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -192,7 +185,6 @@
                     "target": "deb",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -201,7 +193,6 @@
                     "target": "rpm",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -210,7 +201,6 @@
                     "target": "freebsd",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -219,7 +209,6 @@
                     "target": "pacman",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -228,7 +217,6 @@
                     "target": "7z",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -237,7 +225,6 @@
                     "target": "zip",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -246,7 +233,6 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -255,7 +241,6 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -264,7 +249,6 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -273,7 +257,6 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
-                        "ia32",
                         "armv7l",
                         "arm64"
                     ]

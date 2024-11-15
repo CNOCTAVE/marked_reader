@@ -21,7 +21,6 @@
                 "target": "flatpak",
                 "arch": [
                     "x64",
-                    "ia32",
                     "armv7l",
                     "arm64"
                 ],

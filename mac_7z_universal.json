@@ -14,15 +14,13 @@
         "releaseType": "release"
         }
     ],
-    "linux": {
+    "mac": {
         "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "target": [
             {
-                "target": "apk",
+                "target": "7z",
                 "arch": [
-                    "x64",
-                    "armv7l",
-                    "arm64"
+                    "universal"
                 ]
             }
         ]
