@@ -18,10 +18,20 @@
         "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "target": [
             {
-                "target": "tar.lz",
+                "target": "nsis",
                 "arch": [
-                    "x64",
-                    "ia32",
+                    "arm64"
+                ]
+            },
+            {
+                "target": "nsis-web",
+                "arch": [
+                    "arm64"
+                ]
+            },
+            {
+                "target": "portable",
+                "arch": [
                     "arm64"
                 ]
             }

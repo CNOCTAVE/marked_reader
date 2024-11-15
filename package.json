@@ -24,11 +24,28 @@
         "build-mac_zip_universal": "electron-builder --mac --config mac_zip_universal.json",
         "build-mac_7z": "electron-builder --mac --config mac_7z.json",
         "build-mac_7z_universal": "electron-builder --mac --config mac_7z_universal.json",
-        "build-win_nsis": "electron-builder --win --config win_nsis.json",
+        "build-mac_pkg": "electron-builder --mac --config mac_pkg.json",
+        "build-mac_pkg_universal": "electron-builder --mac --config mac_pkg_universal.json",
+        "build-win_appx_arm64": "electron-builder --win --config win_appx_arm64.json",
+        "build-win_appx_ia32": "electron-builder --win --config win_appx_ia32.json",
+        "build-win_appx_x64": "electron-builder --win --config win_appx_x64.json",
+        "build-win_dir_arm64": "electron-builder --win --config win_dir_arm64.json",
+        "build-win_dir_ia32": "electron-builder --win --config win_dir_ia32.json",
+        "build-win_dir_x64": "electron-builder --win --config win_dir_x64.json",
+        "build-win_lz_arm64": "electron-builder --win --config win_lz_arm64.json",
+        "build-win_lz_ia32": "electron-builder --win --config win_lz_ia32.json",
+        "build-win_lz_x64": "electron-builder --win --config win_lz_x64.json",
+        "build-win_nsis_arm64": "electron-builder --win --config win_nsis_arm64.json",
+        "build-win_nsis_ia32": "electron-builder --win --config win_nsis_ia32.json",
+        "build-win_nsis_x64": "electron-builder --win --config win_nsis_x64.json",
         "build-win_squirrel": "electron-builder --win --config win_squirrel.json",
-        "build-win_lz": "electron-builder --win --config win_lz.json",
         "build-linux_apk": "electron-builder --linux --config linux_apk.json",
+        "build-linux_AppImage": "electron-builder --linux --config linux_AppImage.json",
+        "build-linux_deb": "electron-builder --linux --config linux_deb.json",
         "build-linux_flatpak": "electron-builder --linux --config linux_flatpak.json",
+        "build-linux_freebsd": "electron-builder --linux --config linux_freebsd.json",
+        "build-linux_pacman": "electron-builder --linux --config linux_pacman.json",
+        "build-linux_rpm": "electron-builder --linux --config linux_rpm.json",
         "dist": "electron-builder --publish"
     },
     "build": {
@@ -152,13 +169,6 @@
                         "x64",
                         "arm64"
                     ]
-                },
-                {
-                    "target": "pkg",
-                    "arch": [
-                        "x64",
-                        "arm64"
-                    ]
                 }
             ]
         },
@@ -166,47 +176,7 @@
             "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
             "target": [
                 {
-                    "target": "AppImage",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
                     "target": "snap",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "deb",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "rpm",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "freebsd",
-                    "arch": [
-                        "x64",
-                        "armv7l",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "pacman",
                     "arch": [
                         "x64",
                         "armv7l",

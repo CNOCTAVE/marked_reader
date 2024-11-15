@@ -14,31 +14,13 @@
         "releaseType": "release"
         }
     ],
-    "win": {
+    "mac": {
         "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "target": [
             {
-                "target": "nsis",
+                "target": "pkg",
                 "arch": [
-                    "x64",
-                    "ia32",
-                    "arm64"
-                ]
-            },
-            {
-                "target": "nsis-web",
-                "arch": [
-                    "x64",
-                    "ia32",
-                    "arm64"
-                ]
-            },
-            {
-                "target": "portable",
-                "arch": [
-                    "x64",
-                    "ia32",
-                    "arm64"
+                    "universal"
                 ]
             }
         ]
