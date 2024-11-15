@@ -1,9 +1,17 @@
 {
     "name": "marked-reader",
+    "contributors": [
+        "Yu Hongbo <yuhongbo@member.fsf.org>", "CNOCTAVE <cnoctave@qq.com>"
+    ],
     "author": "Yu Hongbo <yuhongbo@member.fsf.org>, CNOCTAVE <cnoctave@qq.com>",
     "email": "cnoctave@qq.com",
     "version": "1.2.0",
     "description": "marked_reader is an open source Markdown reader packed by Electron",
+    "bugs": {
+        "url": "https://github.com/CNOCTAVE/marked_reader/issues",
+        "email": "cnoctave@qq.com"
+    },
+    "license": "AGPL-3.0-only",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
@@ -166,6 +174,7 @@
                     "target": "AppImage",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -174,6 +183,7 @@
                     "target": "snap",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -182,6 +192,7 @@
                     "target": "deb",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -190,6 +201,7 @@
                     "target": "rpm",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -198,6 +210,7 @@
                     "target": "freebsd",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -206,6 +219,7 @@
                     "target": "pacman",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -214,6 +228,7 @@
                     "target": "7z",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -222,6 +237,7 @@
                     "target": "zip",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -230,6 +246,7 @@
                     "target": "tar.xz",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -238,6 +255,7 @@
                     "target": "tar.lz",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -246,6 +264,7 @@
                     "target": "tar.gz",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]
@@ -254,6 +273,7 @@
                     "target": "tar.bz2",
                     "arch": [
                         "x64",
+                        "ia32",
                         "armv7l",
                         "arm64"
                     ]

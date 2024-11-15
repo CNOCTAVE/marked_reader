@@ -21,6 +21,7 @@
                 "target": "apk",
                 "arch": [
                     "x64",
+                    "ia32",
                     "armv7l",
                     "arm64"
                 ]

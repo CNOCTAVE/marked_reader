@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - uses: samuelmeuli/action-snapcraft@v2
       - run: sudo dpkg --add-architecture i386 && sudo apt-get update -y && sudo apt-get install lzip elfutils libarchive-tools wine wine32 -y
       - run: npm ci
@@ -34,6 +37,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
       - run: npm run build-win
 
@@ -47,7 +53,11 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
+      - run: npm install hdiutil
       - run: npm run build-macos
 
   publish-npm:
@@ -61,6 +71,9 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - uses: samuelmeuli/action-snapcraft@v2
       - run: npm ci
       - run: npm publish
@@ -75,7 +88,11 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
+      - run: npm install hdiutil
       - run: npm run build-mac_universal
 
   mac_zip-build:
@@ -88,7 +105,11 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
+      - run: npm install hdiutil
       - run: npm run build-mac_zip
 
   mac_zip_universal-build:
@@ -101,7 +122,11 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
+      - run: npm install hdiutil
       - run: npm run build-mac_zip_universal
 
   win_nsis-build:
