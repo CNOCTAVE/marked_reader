@@ -21,16 +21,16 @@
                 "target": "appx",
                 "arch": [
                     "ia32"
-                ],
-                "appx": {
-                    "applicationId": "marked.reader",
-                    "identityName": "marked.reader",
-                    "displayName": "Marked Reader",
-                    "languages": ["zh-cn"],
-                    "backgroundColor": "transparent",
-                    "publisherDisplayName": "***********"
-                }
+                ]
             }
         ]
+    },
+    "appx": {
+        "applicationId": "marked.reader",
+        "identityName": "marked.reader",
+        "displayName": "Marked Reader",
+        "languages": ["zh-cn"],
+        "backgroundColor": "transparent",
+        "publisherDisplayName": "***********"
     }
 }
