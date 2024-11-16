@@ -14,13 +14,13 @@
         "releaseType": "release"
         }
     ],
-    "mac": {
-        "artifactName": "${name}-${version}-${os}-${arch}-squirrel.${ext}",
+    "win": {
+        "artifactName": "${name}-${version}-${os}-${arch}-portable.${ext}",
         "target": [
             {
-                "target": "default",
+                "target": "portable",
                 "arch": [
-                    "universal"
+                    "ia32"
                 ]
             }
         ]

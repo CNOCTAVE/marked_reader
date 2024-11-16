@@ -479,6 +479,54 @@ jobs:
       - run: npm ci
       - run: npm run build-win_nsis_x64
 
+  win_portable_arm64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_portable_arm64
+
+  win_portable_ia32-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_portable_ia32
+
+  win_portable_x64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_portable_x64
+
   linux_apk-build:
     runs-on: ubuntu-latest
     env:

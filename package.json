@@ -43,6 +43,9 @@
         "build-win_nsis_arm64": "electron-builder --win --config win_nsis_arm64.json",
         "build-win_nsis_ia32": "electron-builder --win --config win_nsis_ia32.json",
         "build-win_nsis_x64": "electron-builder --win --config win_nsis_x64.json",
+        "build-win_portable_arm64": "electron-builder --win --config win_portable_arm64.json",
+        "build-win_portable_ia32": "electron-builder --win --config win_portable_ia32.json",
+        "build-win_portable_x64": "electron-builder --win --config win_portable_x64.json",
         "build-win_squirrel": "electron-builder --win --config win_squirrel.json",
         "build-linux_apk": "electron-builder --linux --config linux_apk.json",
         "build-linux_AppImage": "electron-builder --linux --config linux_AppImage.json",
@@ -56,7 +59,7 @@
     "build": {
         "appId": "cn.cnoctave.marked_reader",
         "productName": "marked_reader",
-        "buildNumber": "1.2.0",
+        "buildNumber": "1.3.0",
         "icon": "logo.png",
         "directories": {
             "output": "dist"
@@ -114,14 +117,6 @@
                 },
                 {
                     "target": "tar.bz2",
-                    "arch": [
-                        "x64",
-                        "ia32",
-                        "arm64"
-                    ]
-                },
-                {
-                    "target": "portable",
                     "arch": [
                         "x64",
                         "ia32",
