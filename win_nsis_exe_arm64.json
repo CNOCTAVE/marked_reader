@@ -20,19 +20,7 @@
             {
                 "target": "nsis",
                 "arch": [
-                    "x64"
-                ]
-            },
-            {
-                "target": "nsis-web",
-                "arch": [
-                    "x64"
-                ]
-            },
-            {
-                "target": "portable",
-                "arch": [
-                    "x64"
+                    "arm64"
                 ]
             }
         ]

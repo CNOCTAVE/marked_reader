@@ -15,21 +15,13 @@
         }
     ],
     "win": {
-        "artifactName": "${name}-${version}-${os}-${arch}-appx.${ext}",
+        "artifactName": "${name}-${version}-${os}-${arch}-nsis-web.${ext}",
         "target": [
             {
-                "target": "appx",
+                "target": "nsis-web",
                 "arch": [
                     "x64"
-                ],
-                "appx": {
-                    "applicationId": "marked.reader",
-                    "identityName": "marked.reader",
-                    "displayName": "Marked Reader",
-                    "languages": ["zh-cn"],
-                    "backgroundColor": "transparent",
-                    "publisherDisplayName": "***********"
-                }
+                ]
             }
         ]
     }

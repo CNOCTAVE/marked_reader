@@ -431,7 +431,7 @@ jobs:
       - run: npm ci
       - run: npm run build-win_lz_x64
 
-  win_nsis_arm64-build:
+  win_nsis_exe_arm64-build:
     runs-on: windows-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -445,9 +445,9 @@ jobs:
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
-      - run: npm run build-win_nsis_arm64
+      - run: npm run build-win_nsis_exe_arm64
 
-  win_nsis_ia32-build:
+  win_nsis_exe_ia32-build:
     runs-on: windows-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -461,9 +461,9 @@ jobs:
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
-      - run: npm run build-win_nsis_ia32
+      - run: npm run build-win_nsis_exe_ia32
 
-  win_nsis_x64-build:
+  win_nsis_exe_x64-build:
     runs-on: windows-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -477,7 +477,103 @@ jobs:
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
       - run: npm ci
-      - run: npm run build-win_nsis_x64
+      - run: npm run build-win_nsis_exe_x64
+
+  win_nsis_portable_arm64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_portable_arm64
+
+  win_nsis_portable_ia32-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_portable_ia32
+
+  win_nsis_portable_x64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_portable_x64
+
+  win_nsis_web_arm64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_web_arm64
+
+  win_nsis_web_ia32-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_web_ia32
+
+  win_nsis_web_x64-build:
+    runs-on: windows-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+      - uses: bduff9/use-npmrc@v2.0.0
+        with:
+          dot-npmrc: ${{ secrets.DOT_NPMRC }}
+      - run: npm ci
+      - run: npm run build-win_nsis_web_x64
 
   win_portable_arm64-build:
     runs-on: windows-latest

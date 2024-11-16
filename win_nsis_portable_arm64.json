@@ -15,20 +15,8 @@
         }
     ],
     "win": {
-        "artifactName": "${name}-${version}-${os}-${arch}-nsis.${ext}",
+        "artifactName": "${name}-${version}-${os}-${arch}-nsis-portable.${ext}",
         "target": [
-            {
-                "target": "nsis",
-                "arch": [
-                    "arm64"
-                ]
-            },
-            {
-                "target": "nsis-web",
-                "arch": [
-                    "arm64"
-                ]
-            },
             {
                 "target": "portable",
                 "arch": [

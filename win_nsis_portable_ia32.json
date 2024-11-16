@@ -15,21 +15,13 @@
         }
     ],
     "win": {
-        "artifactName": "${name}-${version}-${os}-${arch}-appx.${ext}",
+        "artifactName": "${name}-${version}-${os}-${arch}-nsis-portable.${ext}",
         "target": [
             {
-                "target": "appx",
+                "target": "portable",
                 "arch": [
                     "ia32"
-                ],
-                "appx": {
-                    "applicationId": "marked.reader",
-                    "identityName": "marked.reader",
-                    "displayName": "Marked Reader",
-                    "languages": ["zh-cn"],
-                    "backgroundColor": "transparent",
-                    "publisherDisplayName": "***********"
-                }
+                ]
             }
         ]
     }
