@@ -74,6 +74,22 @@ without any warranty.
             </q-header>
             <q-drawer class="bg-primary" show-if-above v-model="leftDrawerOpen" side="left" bordered elevated>
                 <q-list class="title1 text-white bg-primary">
+                    <q-item clickable v-ripple @click="goToID('#homepage')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            项目首页
+                        </q-item-section>
+                    </q-item>
+                    <q-item clickable v-ripple @click="goToID('#repo_install')">
+                        <q-item-section avatar>
+                            <q-icon name="help" />
+                        </q-item-section>
+                        <q-item-section>
+                            软件源安装
+                        </q-item-section>
+                    </q-item>
                     <q-item clickable v-ripple @click="goToID('#how_to_use')">
                         <q-item-section avatar>
                             <q-icon name="help" />
@@ -122,6 +138,14 @@ without any warranty.
                         <div class="text-h5 q-ma-md text-red-10">欢迎广大开发者将此文档翻译为其他语言。</div>
                         <q-btn id="homepage" class="title1 text-white bg-primary" stretch flat
                             label="项目首页：https://github.com/CNOCTAVE/marked_reader" @click="goTo('https://github.com/CNOCTAVE/marked_reader')"></q-btn>
+                        <q-separator></q-separator>
+                        <div id="repo_install" class="title1 q-ma-md text-primary">软件源安装</div>
+                        <p class="q-ma-md">marked_reader可以通过NPM软件源安装。</p>
+                        <div class="text-h5 q-ma-md text-red-10">通过NPM软件源安装marked_reader，代码如下：</div>
+                        <p class="q-ma-md">$ npm i marked_reader</p>
+                        <p class="q-ma-md">marked_reader可以通过Snap软件源安装。</p>
+                        <div class="text-h5 q-ma-md text-red-10">通过Snap软件源安装marked_reader，代码如下：</div>
+                        <p class="q-ma-md">$ sudo snap install marked-reader --edge</p>
                         <q-separator></q-separator>
                         <div id="how_to_use" class="title1 q-ma-md text-primary">如何使用</div>
                         <div class="text-h5 q-ma-md text-red-10">点击左上角的按钮即可打开Markdown文档，如图所示：</div>
