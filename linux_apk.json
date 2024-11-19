@@ -1,7 +1,7 @@
 {
     "appId": "cn.cnoctave.marked_reader",
     "productName": "marked_reader",
-    "buildNumber": "1.3.0",
+    "buildNumber": "2.0.0",
     "icon": "logo.png",
     "directories": {
         "output": "dist"
