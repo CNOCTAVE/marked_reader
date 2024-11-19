@@ -8,6 +8,42 @@ package-lock.json
 package.json
 renderer.js
 builder.js
+linux_apk.json
+linux_AppImage.json
+linux_deb.json
+linux_flatpak.json
+linux_freebsd.json
+linux_pacman.json
+linux_rpm.json
+mac_7z_universal.json
+mac_7z.json
+mac_default_universal.json
+mac_default.json
+mac_dmg_universal.json
+mac_dmg.json
+mac_pkg_arm64.json
+mac_pkg_universal.json
+mac_zip_universal.json
+mac_zip.json
+win_appx_arm64.json
+win_appx_ia32.json
+win_appx_x64.json
+win_dir_arm64.json
+win_dir_ia32.json
+win_dir_x64.json
+win_lz_arm64.json
+win_lz_ia32.json
+win_lz_x64.json
+win_nsis_exe_arm64.json
+win_nsis_exe_ia32.json
+win_nsis_exe_x64.json
+win_nsis_web_arm64.json
+win_nsis_web_ia32.json
+win_nsis_web_x64.json
+win_portable_arm64.json
+win_portable_ia32.json
+win_portable_x64.json
+win_squirrel.json
 
 Copyright (C) 2024  Yu Hongbo, CNOCTAVE
 
