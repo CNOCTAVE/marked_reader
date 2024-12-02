@@ -1,7 +1,7 @@
 {
     "appId": "cn.cnoctave.marked_reader",
     "productName": "marked_reader",
-    "buildNumber": "2.0.0",
+    "buildNumber": "2.1.0",
     "icon": "logo.png",
     "directories": {
         "output": "dist"
@@ -31,7 +31,7 @@
                   "metadata": {
                     "name": "marked_reader",
                     "description": "marked_reader is an open source Markdown reader packed by Electron",
-                    "version": "2.0.0",
+                    "version": "2.1.0",
                     "com.github.app.url": "http://cnoctave.cn",
                     "com.github.app.license": "AGPL-3.0-only"
                   },
