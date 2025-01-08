@@ -5,7 +5,7 @@
     ],
     "author": "Yu Hongbo <yuhongbo@member.fsf.org>, CNOCTAVE <cnoctave@qq.com>",
     "email": "cnoctave@qq.com",
-    "version": "2.2.0",
+    "version": "3.0.0",
     "description": "marked_reader is an open source Markdown reader packed by Electron",
     "bugs": {
         "url": "https://github.com/CNOCTAVE/marked_reader/issues",
@@ -229,11 +229,11 @@
     "devDependencies": {
         "electron": "^33.3.0",
         "electron-builder": "^25.1.8",
-        "marked": "^14.1.2",
+        "marked": "^15.0.6",
         "winston": "^3.15.0"
     },
     "dependencies": {
-        "marked": "^14.1.2",
+        "marked": "^15.0.6",
         "winston": "^3.15.0"
     },
     "publishConfig": {
