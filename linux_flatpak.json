@@ -32,7 +32,7 @@
                     "name": "marked_reader",
                     "description": "marked_reader is an open source Markdown reader packed by Electron",
                     "version": "3.0.0",
-                    "com.github.app.url": "http://cnoctave.cn",
+                    "com.github.app.url": "http://cnoctave.top",
                     "com.github.app.license": "AGPL-3.0-only"
                   },
                   "finishArgs": [
