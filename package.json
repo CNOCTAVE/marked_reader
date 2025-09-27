@@ -65,7 +65,7 @@
     "build": {
         "appId": "cn.cnoctave.marked_reader",
         "productName": "marked_reader",
-        "buildNumber": "3.1.0",
+        "buildNumber": "3.2.0",
         "icon": "logo.png",
         "directories": {
             "output": "dist"
@@ -228,9 +228,7 @@
     },
     "devDependencies": {
         "electron": "^36.5.0",
-        "electron-builder": "^26.0.12",
-        "marked": "^15.0.6",
-        "winston": "^3.15.0"
+        "electron-builder": "^26.0.12"
     },
     "dependencies": {
         "marked": "^15.0.6",
